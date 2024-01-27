@@ -1,1 +1,38 @@
 
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                // Checkout your repository containing the Dockerfile and index.html
+                git 'https://github.com/yourusername/yourrepository.git'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                // Build the Docker image using the Dockerfile in the repository
+                script {
+                    docker.build('my-nginx-image')
+                }
+            }
+        }
+        stage('Run Container') {
+            steps {
+                // Run the Docker container based on the built image
+                script {
+                    docker.run('-p 8080:80 --name my-nginx-container my-nginx-image')
+                }
+            }
+        }
+    }
+    post {
+        always {
+            // Clean up: Stop and remove the container
+            script {
+                docker.stop('my-nginx-container')
+                docker.removeContainer('my-nginx-container')
+            }
+        }
+    }
+}

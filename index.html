@@ -30,9 +30,12 @@
             padding: 0 10px;
         }
         h1 {
-            color: #4CAF50;
+            color: #fff; /* Text color */
             text-align: center;
             margin-bottom: 20px;
+            background-color: #4CAF50; /* Background color */
+            padding: 10px 20px; /* Padding for space around the text */
+            border-radius: 5px; /* Rounded corners */
         }
         h2 {
             color: #4CAF50;
@@ -76,6 +79,20 @@
         .contact-info {
             margin-top: 30px;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -95,18 +112,40 @@
             </div>
         </div>
         <h2>Skills</h2>
-        <div class="skills">
-            <ul class="skill-list">
-                <li class="skill-item">Continuous Integration/Continuous Deployment (CI/CD)</li>
-                <li class="skill-item">Infrastructure as Code (IaC) with Terraform</li>
-                <li class="skill-item">Containerization with Docker</li>
-                <li class="skill-item">Orchestration with Kubernetes</li>
-                <li class="skill-item">Configuration Management with Ansible</li>
-                <li class="skill-item">Version Control with Git and GitHub</li>
-                <li class="skill-item">Cloud Computing with AWS</li>
-            </ul>
-        </div>
-        <!-- Additional skills or sections can be added here -->
+        <table>
+            <tr>
+                <th>Skill</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Continuous Integration/Continuous Deployment (CI/CD)</td>
+                <td>Expertise in setting up CI/CD pipelines for automated software delivery and deployment.</td>
+            </tr>
+            <tr>
+                <td>Infrastructure as Code (IaC) with Terraform</td>
+                <td>Proficient in managing infrastructure resources using Terraform for AWS environments.</td>
+            </tr>
+            <tr>
+                <td>Containerization with Docker</td>
+                <td>Skilled in containerizing applications with Docker for efficient deployment and scaling.</td>
+            </tr>
+            <tr>
+                <td>Orchestration with Kubernetes</td>
+                <td>Experience in orchestrating containerized applications with Kubernetes for automated scaling and management.</td>
+            </tr>
+            <tr>
+                <td>Configuration Management with Ansible</td>
+                <td>Knowledgeable in automating configuration management tasks using Ansible for infrastructure provisioning and management.</td>
+            </tr>
+            <tr>
+                <td>Version Control with Git and GitHub</td>
+                <td>Proficient in utilizing Git and GitHub for version control and collaboration in software development projects.</td>
+            </tr>
+            <tr>
+                <td>Cloud Computing with AWS</td>
+                <td>Strong understanding of AWS services and infrastructure, including EC2, S3, RDS, and more.</td>
+            </tr>
+        </table>
         <div class="contact-info">
             <h2>Contact Information</h2>
             <p>Email: prajwal.patil0@outlook.com</p>

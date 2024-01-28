@@ -1,29 +1,23 @@
-
 pipeline {
     agent any
-    
     stages {
         stage('Build') {
             steps {
                 // Checkout your repository containing the Dockerfile and index.html
-                git 'https://github.com/Prajwal2023/Daku.git'
+                git branch: 'main', url: 'https://github.com/Prajwal2023/Daku.git'
             }
         }
         stage('Build Docker Image') {
             steps {
                 // Build the Docker image using the Dockerfile in the repository
-                script {
-                    docker.build('my-nginx-image')
+               sh 'docker build . -t image'
                 }
             }
-        }
         stage('Run Container') {
             steps {
                 // Run the Docker container based on the built image
-                script {
-                    docker.run('-p 8080:80 --name my-nginx-container my-nginx-image')
-                }
+               sh 'docker run -d -p 8082:80 image'
             }
         }
     }
-}
+}   
